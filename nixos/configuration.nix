@@ -1,13 +1,10 @@
 { lib, pkgs, config, modulesPath, ... }:
 
 with lib;
-let
-  nixos-wsl = import ./nixos-wsl;
-in
-{
-  imports = 
-    ["${modulesPath}/profiles/minimal.nix" nixos-wsl.nixosModules.wsl] ++ 
-    [(import ./fonts.nix)];
+let nixos-wsl = import ./nixos-wsl;
+in {
+  imports = [ "${modulesPath}/profiles/minimal.nix" nixos-wsl.nixosModules.wsl ]
+    ++ [ (import ./fonts.nix) ];
 
   wsl = {
     enable = true;
@@ -30,10 +27,10 @@ in
   '';
 
   users.users.nixos = {
-   shell = pkgs.zsh;
-   isNormalUser = true;
-   description = "Hugo";
-   extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    description = "Hugo";
+    extraGroups = [ "wheel" ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -56,12 +53,31 @@ in
     python311
     cargo
     clang
-    rustc
-    llvmPackages.bintools
+    # rustc
+    # llvmPackages.bintools
     rustup
     gh
-  ];
+    exercism
+    nodejs
 
+    ## LSP
+    rust-analyzer
+    rnix-lsp
+    lua-language-server
+
+    ## Debug
+    # lldb_16
+    # libclang
+    # lldb_9
+    llvmPackages_rocm.lldb
+    llvmPackages_rocm.clang-unwrapped
+
+    ## Format
+    stylua
+    rustfmt
+    nixfmt
+
+  ];
 
   system.stateVersion = "22.05";
 }

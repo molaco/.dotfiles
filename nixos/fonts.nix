@@ -12,7 +12,9 @@ fonts = {
     noto-fonts-cjk
     noto-fonts-emoji
     twemoji-color-font
-    (nerdfonts.override {fonts = [ "FiraCode" "DroidSansMono" "FiraMono" ]; })
+    fira-code
+    fira-code-symbols
+    # (nerdfonts.override {fonts = [ "FiraCode" "DroidSansMono" "FiraMono" ]; })
     ];
   };
 }

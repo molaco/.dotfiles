@@ -1,9 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports =
-    (import ./shell) ++
-    [(import ./prog/helix.nix)];
+  imports = (import ./shell) ++ [ (import ./prog/helix.nix) ];
 
   home = {
     username = "nixos";
@@ -11,8 +9,6 @@
     stateVersion = "22.05";
   };
 
-  programs = {
-    home-manager.enable = true;
-  };
+  programs = { home-manager.enable = true; };
 
 }
