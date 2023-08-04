@@ -59,6 +59,7 @@ in {
     gh
     exercism
     nodejs
+    ripgrep
 
     ## LSP
     rust-analyzer
