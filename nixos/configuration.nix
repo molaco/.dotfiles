@@ -72,6 +72,7 @@ in {
     # lldb_9
     llvmPackages_rocm.lldb
     llvmPackages_rocm.clang-unwrapped
+    mold
 
     ## Format
     stylua
