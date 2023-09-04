@@ -52,7 +52,6 @@ in {
     python38
     python311
     cargo
-    clang
     # rustc
     # llvmPackages.bintools
     rustup
@@ -60,24 +59,32 @@ in {
     exercism
     nodejs
     ripgrep
+    qmk
 
     ## LSP
     rust-analyzer
     rnix-lsp
     lua-language-server
 
+
     ## Debug
     # lldb_16
     # libclang
     # lldb_9
-    llvmPackages_rocm.lldb
-    llvmPackages_rocm.clang-unwrapped
+    llvmPackages_14.bintools
     mold
 
     ## Format
     stylua
     rustfmt
     nixfmt
+
+    ## Cpp
+    clang
+    clang-tools
+    libcxx
+    llvmPackages_rocm.lldb
+    llvmPackages_rocm.clang-unwrapped
 
   ];
 

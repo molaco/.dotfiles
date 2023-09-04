@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    helix.url = "github:SoraTenshi/helix/experimental-22.12";
+    # helix.url = "github:SoraTenshi/helix/experimental-22.12";
 
     home-manager = {
       url = "github:nix-community/home-manager";
